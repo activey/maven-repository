@@ -9,12 +9,30 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>reactor-transport-directinput</artifactId>
+    <artifactId>reactor-transport-speech</artifactId>
+
+    <properties>
+        <reactor.voice.version>0.0.1</reactor.voice.version>
+
+        <jlayer.version>1.0.1-1</jlayer.version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.reactor</groupId>
             <artifactId>reactor-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.reactor</groupId>
+            <artifactId>voice</artifactId>
+            <version>${reactor.voice.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.soundlibs</groupId>
+            <artifactId>jlayer</artifactId>
+            <version>${jlayer.version}</version>
         </dependency>
 
         <dependency>
