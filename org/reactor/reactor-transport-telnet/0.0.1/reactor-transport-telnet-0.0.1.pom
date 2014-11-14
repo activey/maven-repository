@@ -9,19 +9,29 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <properties>
-        <zt-exec.version>1.7</zt-exec.version>
-    </properties>
-    <artifactId>reactor-system</artifactId>
+    <artifactId>reactor-transport-telnet</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.reactor</groupId>
             <artifactId>reactor-api</artifactId>
         </dependency>
+
         <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
+            <groupId>org.apache.mina</groupId>
+            <artifactId>mina-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -29,11 +39,6 @@
             <artifactId>fest-assert</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.zeroturnaround</groupId>
-            <artifactId>zt-exec</artifactId>
-            <version>${zt-exec.version}</version>
-        </dependency>
     </dependencies>
+
 </project>

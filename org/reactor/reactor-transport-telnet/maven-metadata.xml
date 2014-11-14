@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
   <groupId>org.reactor</groupId>
-  <artifactId>reactor-system</artifactId>
+  <artifactId>reactor-transport-telnet</artifactId>
   <versioning>
     <release>0.0.1</release>
     <versions>
       <version>0.0.1</version>
     </versions>
-    <lastUpdated>20141114123403</lastUpdated>
+    <lastUpdated>20141114123407</lastUpdated>
   </versioning>
 </metadata>
