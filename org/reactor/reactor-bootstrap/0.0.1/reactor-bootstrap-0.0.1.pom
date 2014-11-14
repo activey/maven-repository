@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>reactor-parent</artifactId>
+        <groupId>org.reactor</groupId>
+        <version>0.0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>reactor-bootstrap</artifactId>
+
+    <properties>
+        <appassembler.version>1.1.1</appassembler.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>appassembler-maven-plugin</artifactId>
+                <version>${appassembler.version}</version>
+                <configuration>
+                    <target>${project.build.directory}/target/dist</target>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>app-assemble</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>assemble</goal>
+                        </goals>
+                        <configuration>
+                            <programs>
+                                <program>
+                                    <mainClass>org.reactor.ReactorRunner</mainClass>
+                                    <name>run-cmd</name>
+                                </program>
+                                <program>
+                                    <mainClass>org.reactor.TransportRunner</mainClass>
+                                    <name>run-bot</name>
+                                </program>
+                            </programs>
+                            <repositoryLayout>flat</repositoryLayout>
+                            <repositoryName>lib</repositoryName>
+                            <assembleDirectory>${project.build.directory}/dist</assembleDirectory>
+                            <platforms>
+                                <platform>unix</platform>
+                            </platforms>
+                            <copyConfigurationDirectory>true</copyConfigurationDirectory>
+                            <configurationDirectory>etc</configurationDirectory>
+                            <configurationSourceDirectory>${project.basedir}/src/main/resources</configurationSourceDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.reactor</groupId>
+            <artifactId>reactor-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.reactor</groupId>
+            <artifactId>reactor-jira</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.reactor</groupId>
+            <artifactId>reactor-jenkins</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.reactor</groupId>
+            <artifactId>reactor-sonar</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.reactor</groupId>
+            <artifactId>reactor-system</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.reactor</groupId>
+            <artifactId>reactor-transport-telnet</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.reactor</groupId>
+            <artifactId>reactor-transport-directinput</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.reactor</groupId>
+            <artifactId>reactor-transport-speech</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.reactor</groupId>
+            <artifactId>reactor-transport-http-jetty</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.reactor</groupId>
+            <artifactId>travelling</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.easytesting</groupId>
+            <artifactId>fest-assert</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
