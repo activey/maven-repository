@@ -10,8 +10,8 @@
 
     <repositories>
         <repository>
-            <id>activey-cloudbees</id>
-            <url>http://repository-activey.forge.cloudbees.com/release</url>
+            <id>activey-maven-repository</id>
+            <url>https://github.com/activey/maven-repository</url>
         </repository>
     </repositories>
 
